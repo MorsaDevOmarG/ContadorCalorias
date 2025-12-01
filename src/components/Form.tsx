@@ -8,6 +8,16 @@ export default function Form() {
     calories: 0
   });
 
+  const handleOnChange = (e) => {
+    // console.log('Algo cambio...', e.target);
+    // console.log('Algo cambio...', e.target.value);
+
+    setActivity({
+      ...activity,
+      [e.target.id] : e.target.value 
+    });
+  };
+
   return (
     <form className="space-y-5 bg-white shadow p-10 rounded-lg">
       <div className="grid grid-cols-1 gap-3">
@@ -17,6 +27,7 @@ export default function Form() {
           className="border border-slate-300 p-2 rounded-lg w-full bg-white"
           id="category"
           value={activity.category}
+          onChange={handleOnChange}
         >
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
@@ -27,7 +38,9 @@ export default function Form() {
       </div>
 
       <div className="grid grid-cols-1 gap-3">
-        <label htmlFor="name" className="font-bold">Actividad:</label>
+        <label htmlFor="name" className="font-bold">
+          Actividad:
+        </label>
 
         <input
           className="border border-slate-300 p-2 rounded-lg"
@@ -35,11 +48,14 @@ export default function Form() {
           id="name"
           placeholder="Ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas, Bicicleta"
           value={activity.name}
+          onChange={handleOnChange}
         />
       </div>
 
       <div className="grid grid-cols-1 gap-3">
-        <label htmlFor="calories" className="font-bold">Calorías:</label>
+        <label htmlFor="calories" className="font-bold">
+          Calorías:
+        </label>
 
         <input
           className="border border-slate-300 p-2 rounded-lg"
@@ -48,13 +64,14 @@ export default function Form() {
           id="calories"
           placeholder="Calorías. ej. 300 ó 500"
           value={activity.calories}
+          onChange={handleOnChange}
         />
       </div>
 
       <input
         className="bg-gray-800 hover:bg-gray-700 w-full p-2 font-bold uppercase text-white cursor-pointer"
         type="submit"
-        value='Guardar Comida o Guardar Ejercicio'
+        value="Guardar Comida o Guardar Ejercicio"
       />
     </form>
   );
