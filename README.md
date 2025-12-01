@@ -1,1 +1,71 @@
 # Proyecto Contador de Calorías
+
+## Herramientas y/o tecnologías
+
+- React
+- Node.js (20.19.0)
+- Vite
+- TailwindCSS
+  - **_npm install tailwindcss @tailwindcss/vite_**
+- TypeScript
+
+## Creación del proyecto
+
+- Para la creación del proyecto, ejecutamos en consola:
+  - **_npm create vite@lastest_**
+- Con esto, nos intalará la última versión de _Vite_.
+- Al ejecutar el comando, nos aparecerá lo siguiente:
+  - _Project name:_ **NombreProyecto**
+  - _Select a framework:_ **Seleccionamos el FRAMEWORK con el teclado, aparecerá puntos o flechas, elegimos: _REACT_**
+  - _Select a variant:_ **Seleccionamos para este proyecto: _TypeScript + SWC_**
+  - _Use rolldown-vite (Experimental)?:_ **No**
+  - _Install with npm and start now?_ **Yes**
+- Después de terminar la configuración, nos aparece la _URL_ de cómo debemos abrirla en el navegador
+  - _http://localhost:5173/_
+- En caso que no aparezca, nos movemos a la carpeta del proyecto
+  - **cd nombreProyecto**
+- Y ejecutamos:
+  - **npm i**
+- Ya una vez creado el proyecto y terminando la configuración inicial, limpiamos el contenido de los archivos:
+  - **_App.jsx_**
+  - **_main.jsx_** -> aquí solo realizamos unos pequeños ajustes
+  - **_index.css_** -> limpiamos todo el CSS
+- El proyecto lo levantamos con:
+  - **_npm run dev_**
+- Una vez que terminamos el proyecto, ejecutamos el comando:
+  - **_npm run build_**
+- Con esto nos aparecerá la carpeta de:
+  - _dist_ 
+- Abrimos la carpeta: _public_ y eliminamos el archivo: **.svg**
+- Abrimos: _src_ y eliminamos: 
+  - **assets**
+  - **App.css**
+- Del archivo: **App.tsx**
+  - Limpiamos o eliminamos las variables y lo que esta dentro del _return_
+  - Así mismo también eliminamos los _IMPORT_
+- Del archivo: _index.css_, borramos todo su contenido.
+
+### TAILWINDCSS
+
+- _TaildinwCSS_ es un _framework CSS_ basado en utilidades.
+- A diferencia de _Bootstrap_ donde una clase tiene diferentes propiedades de _CSS_, en _TaldinwCSS_ cada clase es una propiedad de _CSS_ con un nombre similar.
+
+  ## VENTAJAS
+
+  - Su ventaja principal es que escribes el código _CSS_ en tus componentes sin hojas externas.
+  - Tampoco es necesario preocuparte por la herencia en _CSS_.
+  - El como nombrar tus clases tampoco es un problema.
+  - Excelente Documentación.
+  - La extensión de _VSC_ es excelente para el autocompletado.
+
+- Instalación:
+  - **_npm install tailwindcss @tailwindcss/vite_**
+- Después de la instalación aparecerá un archivo:
+  - **vite.config.ts**
+- Dentro del archivo tenemos que agregar la línea:
+  - _import tailwindcss from '@tailwindcss/vite';_
+- Dentro de ese archivo tenemos que agregar lo siguiente en la línea, solo complementamos con _tailwindcss_:
+  - **plugins: [react(), tailwindcss()],**
+- En el archivo: _index.css_, agregamos lo siguiente:
+  - **@import "tailwindcss";**
+- 
