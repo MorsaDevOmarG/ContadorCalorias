@@ -1,8 +1,9 @@
 import { useState, ChangeEvent } from "react";
-import { categories } from "../data/categories"
+import { categories } from "../data/categories";
+import type { Activity } from "../types";
 
 export default function Form() {
-  const [activity, setActivity] = useState({
+  const [activity, setActivity] = useState<Activity>({
     category: 1,
     name: '',
     calories: 0
@@ -15,9 +16,12 @@ export default function Form() {
     // console.log('Algo cambio...', e.target);
     // console.log('Algo cambio...', e.target.value);
 
+    const isNumberField = ['category', 'calories'].includes(e.target.id);
+    // console.log({ isNumberField });
+
     setActivity({
       ...activity,
-      [e.target.id]: e.target.value,
+      [e.target.id]: isNumberField ? +e.target.value : e.target.value
     });
   };
 
