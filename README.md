@@ -68,4 +68,28 @@
   - **plugins: [react(), tailwindcss()],**
 - En el archivo: _index.css_, agregamos lo siguiente:
   - **@import "tailwindcss";**
-- 
+
+
+### USEREDUCER
+
+- Es una alternative de:
+  - _useSTate_
+- Es un _hook_ de _React_ que te permite agregar un _reducer_ a tu componente.
+- El _hook_ **useReducer** en _React_ es una alterantiva a _useState_ que se utiliza para manejar estados más complejos y transiciones de estado que involucran lógica más complicada.
+- Mientras que _usteState_ es perfecto para el manejo de estados simples, _useReducer_ es más adecuado para situaciones donde el nuevo estado depende del estado anteriro o cuando hay múltiples sub-valores o lógica condicional a considerar.
+  - ## Composición
+    - El _hook_ **useReducer** toma dos argumentos:
+      - _Reducer_: una función que toma el estado actual y una acción, y devuelve un nuevo estado.
+      - Estado inicial: El estado inicial de _reducer_.
+      - Ejemplo:
+        - `` const [state, dispatch] = useReducer(reducer, initalState) ``
+      
+      - ### Algunos términos
+        - Cuando trabajas con **useReducer**.
+        - Cuando creas tus _reducers_ encontrarás varios términos.
+        - _state_: es el valor del estado cuya lógica se maneja dentro del _Reducer_.
+        - _initialState_: es el _state_ inicial con el que es creado el _reducer_, este _initialState_ es similar a los valores de inicio de _useState_.
+        - _Actions_: las acciones son las funciones que manejan toda la lógica para modificar tu _state_.
+        - _Payload_: es la información que modifica tu _state_.
+        - _Dispatch_: es la función que manda llamar la acción con el _payload_.
+        
