@@ -1,18 +1,20 @@
 import { useState, ChangeEvent, FormEvent, Dispatch } from "react";
 import { categories } from "../data/categories";
 import type { Activity } from "../types";
-import { ActivityActions } from "../reducers/activity-reducer";
+import { ActivityActions, initialState } from '../reducers/activity-reducer';
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>
 };
 
+const initialState = {
+  category: 1,
+  name: '',
+  calories: 0
+};
+
 export default function Form( { dispatch }: FormProps ) {
-  const [activity, setActivity] = useState<Activity>({
-    category: 1,
-    name: '',
-    calories: 0
-  });
+  const [activity, setActivity] = useState<Activity>(initialState);
 
   // const handleOnChange = (e) => {
   const handleOnChange = (
@@ -46,6 +48,8 @@ export default function Form( { dispatch }: FormProps ) {
         newActivity: activity
       }
     });
+
+    setActivity(initialState);
   };
 
   return (
