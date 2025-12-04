@@ -9,6 +9,11 @@ export type ActivityActions = {
     payload: {
       id: Activity['id']
     }
+  } | {
+    type: 'delete-activity',
+    payload: {
+      id: Activity['id']
+    }
   }
 };
 
@@ -50,6 +55,13 @@ export const activityReducer = (
     return {
       ...state,
       activeId: action.payload.id
+    };
+  }
+
+  if (action.type === 'delete-activity') {
+    return {
+      ...state,
+      activities: state.activities.filter(activity => activity.id !== action.payload.id)
     };
   }
 
