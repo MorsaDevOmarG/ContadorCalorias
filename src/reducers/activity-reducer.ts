@@ -12,7 +12,7 @@ export type ActivityActions = {
   }
 };
 
-type ActivityState = {
+export type ActivityState = {
   activities: Activity[],
   activeId: Activity['id']
 };
