@@ -31,7 +31,7 @@ export default function ActivityList({
       </h2>
 
       {isEmptyActivites ? (
-        <p className="text-center">No hay actividades aún...</p>
+        <p className="text-center mt-5">No hay actividades aún...</p>
       ) : (
         activities.map((activity) => (
           <div
