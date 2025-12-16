@@ -14,6 +14,8 @@
     - **_npm i --save-dev @types/uuid_**
 - HeroIcons
   - **_npm i @heroicons/react_**
+- ContextAPI
+- useReducer
 
 ## Creación del proyecto
 
